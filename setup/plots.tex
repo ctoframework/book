@@ -1,0 +1,8 @@
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgfmath}
+\pgfmathdeclarefunction{gamma}{1}{%
+    \pgfmathparse{exp(-0.5772156649015328606*(#1-1))*
+        sqrt(2*3.1415926535897932384626433832795*(#1-1))*
+        ((#1-1)/2.7182818284590452353602874713527)^((#1-1))}%
+}

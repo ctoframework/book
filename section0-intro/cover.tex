@@ -1,0 +1,33 @@
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Background gradient (dark sky to neon blue horizon)
+    \shade[top color=black, bottom color=blue!60!black]
+    (current page.south west) rectangle (current page.north east);
+
+    % Horizon Glow
+    \draw [white, opacity=0.5] (-5,3) -- (5,3);
+    \fill [blue!70!black] (-5,2.8) rectangle (5,3);
+
+    % 3D Perspective Grid
+    \begin{scope}[canvas is xy plane at z=0, transform shape]
+        \foreach \x in {-10,-9,...,10} {
+                \draw[magenta!80] (\x,-1) -- (0,4);
+            }
+        \foreach \y in {-1,0,...,3} {
+                \draw[magenta!80] (-10,\y) -- (10,\y);
+            }
+    \end{scope}
+
+    % Book Title
+    \node[text=white, font=\bfseries\Huge] at (current page.north)
+    [yshift=-2cm] {CTO Framework};
+
+    % Subtitle
+    \node[text=white, font=\LARGE] at (current page.north)
+    [yshift=-4cm] {A Strategic Guide for Tech Leaders};
+
+    % Author Name
+    \node[text=white, font=\Large] at (current page.south)
+    [yshift=2cm] {By Santiago Lizardo | \GitTag\ - \the\year{}};
+\end{tikzpicture}

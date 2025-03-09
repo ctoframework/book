@@ -1,0 +1,16 @@
+tags
+*.log
+*.gz
+*.aux
+*.fls
+*.toc
+*.out
+*.fdb_latexmk
+*.idx
+*.ilg
+*.ind
+*.lot
+*.lol
+*.lof
+git-info.tex
+cto-framework-book.pdf

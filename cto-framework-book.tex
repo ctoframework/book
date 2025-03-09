@@ -1,0 +1,70 @@
+% !TEX root = cto-framework-book.tex
+
+\documentclass[a4paper]{book}
+
+\usepackage[english]{babel} % Language support
+\usepackage[utf8]{inputenc} % Encoding for special characters
+\usepackage[T1]{fontenc}    % Proper font encoding
+\usepackage{lmodern}        % Better font rendering
+% \usepackage{mlmodern}
+
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{{images/}{../images/}}
+
+\usepackage{tikz}          % For creating graphical elements and colors
+\usepackage{tikz-3dplot} 
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{primarycolor}{HTML}{CB54F2}
+\definecolor{secondarycolor}{HTML}{2A64B3}
+
+
+\usepackage{amsmath} % For environment equation
+
+\usepackage{afterpage}
+
+\usepackage{geometry}
+\usepackage{array}
+
+\usepackage{imakeidx}
+\makeindex
+
+\input{setup/code}
+\input{setup/links}
+\input{setup/plots}
+\input{git-info}
+
+\title{CTO Framework}
+\author{Santiago Lizardo}
+\date{\GitTag\ - \the\year{}}
+
+\begin{document}
+
+\frontmatter
+
+\include{section0-intro/cover}
+
+\tableofcontents
+
+\mainmatter
+
+\include{section0-intro/dedication}
+\include{section0-intro/main}
+
+\include{section1-people/main}
+\include{section2-process/main}
+\include{section3-product/main}
+\include{section4-technology/main}
+
+\include{section5-conclusion/main}
+
+\backmatter
+
+\include{section6-appendix/main}
+
+\listoffigures
+\listoftables
+% \lstlistoflistings
+\printindex
+
+\end{document}
