@@ -1,26 +1,26 @@
 \pagestyle{empty}
 
-\begin{tikzpicture}[remember picture, overlay]
+\begin{tikzpicture}[remember picture, overlay, shift={(current page.center)}]
     % Background gradient (dark sky to neon blue horizon)
     \shade[top color=black, bottom color=blue!60!black]
     (current page.south west) rectangle (current page.north east);
 
     % Horizon Glow
-    \draw [white, opacity=0.5] (-5,3) -- (5,3);
-    \fill [blue!70!black] (-5,2.8) rectangle (5,3);
+    \draw [magenta, opacity=0.8, line width=1pt] (-{0.5\paperwidth},0.15\paperheight) -- ({0.5\paperwidth},0.15\paperheight);
+    \fill [magenta!70!blue!30!black] (-{0.5\paperwidth},0.14\paperheight) rectangle ({0.5\paperwidth},0.15\paperheight);
 
     % 3D Perspective Grid
     \begin{scope}[canvas is xy plane at z=0, transform shape]
-        \foreach \x in {-10,-9,...,10} {
-                \draw[magenta!80] (\x,-1) -- (0,4);
+        \foreach \x in {-64,-63,...,64} {
+                \draw[magenta, line width=0.8pt, opacity=0.7] (\x,-0.5\paperheight) -- (\x/5,0.15\paperheight);
             }
-        \foreach \y in {-1,0,...,3} {
-                \draw[magenta!80] (-10,\y) -- (10,\y);
+        \foreach \y in {0.10, 0.05,...,-0.55} {
+                \draw[magenta, line width=0.8pt, opacity=0.7] (-12\paperwidth,\y\paperheight) -- (12\paperwidth,\y\paperheight);
             }
     \end{scope}
 
     % Book Title
-    \node[text=white, font=\bfseries\Huge] at (current page.north)
+    \node[text=primarycolor, font=\bfseries\Huge] at (current page.north)
     [yshift=-2cm] {CTO Framework};
 
     % Subtitle
