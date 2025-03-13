@@ -14,6 +14,10 @@
 \usepackage{tikz-3dplot} 
 \usepackage[dvipsnames]{xcolor}
 
+\newcommand{\booktitle}{CTO Framework}
+\newcommand{\bookauthor}{Santiago Lizardo}
+\newcommand{\booklicence}{Creative Commons Attribution 4.0 International (CC BY 4.0)}
+
 \definecolor{primarycolor}{HTML}{CB54F2}
 \definecolor{secondarycolor}{HTML}{2A64B3}
 
@@ -33,8 +37,8 @@
 \input{setup/plots}
 \input{git-info}
 
-\title{CTO Framework}
-\author{Santiago Lizardo}
+\title{\booktitle}
+\author{\bookauthor}
 \date{\GitTag\ - \the\year{}}
 
 \begin{document}
@@ -42,7 +46,9 @@
 \frontmatter
 
 \include{section0-intro/cover}
+\include{section0-intro/version}
 
+\newpage
 \tableofcontents
 
 \mainmatter
@@ -64,6 +70,9 @@
 \listoffigures
 \listoftables
 % \lstlistoflistings
+
+\clearpage
+\addcontentsline{toc}{chapter}{Index}
 \printindex
 
 \end{document}
