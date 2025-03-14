@@ -15,6 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           args: -jobname=cto-framework-book -output-format=pdf
+          latexmk_use_lualatex: true
           root_file: cto-framework-book.tex
       - name: Release
         uses: softprops/action-gh-release@v2
