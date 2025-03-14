@@ -7,8 +7,14 @@
 \usepackage{lmodern}        % Better font rendering
 % \usepackage{mlmodern}
 
+\usepackage{fontspec}
+\setmainfont{IBM Plex Sans}
+
 \usepackage{graphicx} % Required for inserting images
 \graphicspath{{images/}{../images/}}
+
+\usepackage{sectsty}
+\chapterfont{\color{secondarycolor}}
 
 \usepackage{tikz}          % For creating graphical elements and colors
 \usepackage{tikz-3dplot} 
@@ -20,7 +26,12 @@
 
 \definecolor{primarycolor}{HTML}{CB54F2}
 \definecolor{secondarycolor}{HTML}{2A64B3}
-
+\definecolor{color1}{HTML}{CB54F2}
+\definecolor{color2}{HTML}{2A64B3}
+\definecolor{color3}{HTML}{377E8C}
+\definecolor{color4}{HTML}{421869}
+\definecolor{color5}{HTML}{A9F2FB}
+\definecolor{color6}{HTML}{040505}
 
 \usepackage{amsmath} % For environment equation
 
@@ -28,10 +39,12 @@
 
 \usepackage{geometry}
 \usepackage{array}
+\usepackage{fontawesome5}
 
 \usepackage{imakeidx}
 \makeindex
 
+\input{setup/boxes}
 \input{setup/code}
 \input{setup/links}
 \input{setup/plots}
