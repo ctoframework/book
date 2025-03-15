@@ -18,20 +18,12 @@
 
 \usepackage{tikz}          % For creating graphical elements and colors
 \usepackage{tikz-3dplot} 
-\usepackage[dvipsnames]{xcolor}
 
 \newcommand{\booktitle}{CTO Framework}
 \newcommand{\bookauthor}{Santiago Lizardo}
 \newcommand{\booklicence}{Creative Commons Attribution 4.0 International (CC BY 4.0)}
 
-\definecolor{primarycolor}{HTML}{CB54F2}
-\definecolor{secondarycolor}{HTML}{2A64B3}
-\definecolor{color1}{HTML}{CB54F2}
-\definecolor{color2}{HTML}{2A64B3}
-\definecolor{color3}{HTML}{377E8C}
-\definecolor{color4}{HTML}{421869}
-\definecolor{color5}{HTML}{A9F2FB}
-\definecolor{color6}{HTML}{040505}
+\input{setup/colors}
 
 \usepackage{amsmath} % For environment equation
 
@@ -42,12 +34,13 @@
 \usepackage{fontawesome5}
 
 \usepackage{imakeidx}
-\makeindex
+\makeindex[intoc]
 
 \input{setup/boxes}
 \input{setup/code}
 \input{setup/links}
 \input{setup/plots}
+\input{setup/headers}
 \input{git-info}
 
 \title{\booktitle}
@@ -65,6 +58,7 @@
 \tableofcontents
 
 \mainmatter
+\pagestyle{fancy}
 
 \include{section0-intro/dedication}
 \include{section0-intro/main}
@@ -85,7 +79,6 @@
 % \lstlistoflistings
 
 \clearpage
-\addcontentsline{toc}{chapter}{Index}
 \printindex
 
 \end{document}
