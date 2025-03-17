@@ -1,7 +1,11 @@
 NAME=cto-framework-book
 
 pdf: clean prepare
-	pdflatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
+	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
+	bibtex $(NAME).aux
+	makeindex $(NAME).idx
+	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
+	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
 
 open:
 	xdg-open $(NAME).pdf

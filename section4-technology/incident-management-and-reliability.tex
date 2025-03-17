@@ -1,0 +1,68 @@
+\subsection{Incident Management and Reliability}
+
+A structured approach to incident management is essential for maintaining system reliability and ensuring business continuity. As organisations increasingly depend on technology, a well-defined incident response process mitigates downtime, enhances resilience, and fosters continuous improvement.
+
+\subsubsection{Incident Response Plan}
+
+An effective incident response plan (IRP) provides predefined escalation paths, roles, and procedures that guide the organisation during a crisis. A comprehensive IRP typically includes the following key elements:
+
+\begin{itemize}
+    \item \textbf{Detection and Identification:} Implementing monitoring tools such as Prometheus, Datadog, or AWS CloudWatch to detect anomalies and trigger alerts.
+    \item \textbf{Classification and Prioritisation:} Categorising incidents based on severity levels (e.g., P1, P2, P3) to ensure a proportionate response.
+    \item \textbf{Escalation and Communication:} Defining communication protocols and using tools like PagerDuty or Slack to alert on-call engineers and stakeholders.
+    \item \textbf{Resolution and Mitigation:} Applying predefined playbooks and automated remediation mechanisms to reduce mean time to resolution (MTTR).
+    \item \textbf{Review and Documentation:} Capturing key incident details to inform future prevention strategies.
+\end{itemize}
+
+A well-structured IRP reduces confusion during crises and accelerates recovery, ensuring minimal impact on users and business operations.
+
+\subsubsection{Postmortems and Continuous Learning}
+
+Postmortems are essential for learning from past failures and improving reliability over time. A blameless postmortem culture fosters transparency and accountability while encouraging proactive risk mitigation. Key components of an effective postmortem include:
+
+\begin{enumerate}
+    \item \textbf{Incident Summary:} A clear description of the event, impact, and affected systems.
+    \item \textbf{Root Cause Analysis (RCA):} Identification of underlying factors, often using methodologies such as the "Five Whys" or Fishbone Diagrams.
+    \item \textbf{Timeline of Events:} A chronological breakdown of detection, response, and resolution actions.
+    \item \textbf{Lessons Learned:} Insights gained from the incident, highlighting gaps in monitoring, automation, or communication.
+    \item \textbf{Action Items:} Concrete steps to prevent recurrence, assigned to responsible teams with defined deadlines.
+\end{enumerate}
+
+Organisations such as Google and Netflix have adopted postmortem processes to enhance system reliability, demonstrating the effectiveness of continuous learning in technology operations \cite{allspaw2012postmortem}.
+
+\subsubsection{Redundancy and High Availability}
+
+Ensuring system reliability requires designing for failure through redundancy and high availability. This involves implementing fault-tolerant architectures that can withstand component failures without significant service degradation. Key strategies include:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Strategy}       & \textbf{Description}                                                                                      \\
+        \hline
+        Load Balancing          & Distributing traffic across multiple servers using tools like AWS ELB, Nginx, or HAProxy.                 \\
+        \hline
+        Database Replication    & Using primary-replica setups or multi-region replication in databases like PostgreSQL, MySQL, or MongoDB. \\
+        \hline
+        Multi-Cloud Deployments & Running services across multiple cloud providers (e.g., AWS and GCP) to mitigate cloud outages.           \\
+        \hline
+        Auto-Healing Mechanisms & Implementing self-healing infrastructure using Kubernetes, Terraform, or AWS Auto Scaling Groups.         \\
+        \hline
+        Disaster Recovery (DR)  & Establishing backup strategies, warm/cold failover plans, and automated recovery drills.                  \\
+        \hline
+    \end{tabular}
+    \caption{Redundancy and High Availability Strategies}
+    \label{tab:redundancy-strategies}
+\end{table}
+
+These redundancy techniques enhance fault tolerance and ensure seamless user experiences even in the face of unexpected failures.
+
+\subsubsection{Conclusion}
+
+A robust incident management and reliability strategy is integral to building scalable, resilient technology. By implementing structured incident response plans, fostering a blameless postmortem culture, and designing for redundancy, organisations can minimise downtime and enhance service reliability. These best practices ultimately contribute to sustained business growth and customer trust.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+    \bibitem{allspaw2012postmortem} Allspaw, J. (2012). \textit{Postmortem Culture: Learning from Failure}. Velocity Conference.
+\end{thebibliography}
+
