@@ -15,4 +15,23 @@ Amy~C. Edmondson.
 \newblock Psychological safety and learning behavior in work teams.
 \newblock {\em Administrative Science Quarterly}, 44(2):350--383, 1999.
 
+\bibitem{thomke2020experimentation}
+Stefan Thomke.
+\newblock {\em Experimentation Works: The Surprising Power of Business
+  Experiments}.
+\newblock Harvard Business Review Press, 2020.
+
+\bibitem{kohavi2009controlled}
+Ron Kohavi, Roger Longbotham, Dan Sommerfield, and Randy~M Henne.
+\newblock Controlled experiments on the web: survey and practical guide.
+\newblock {\em Data Mining and Knowledge Discovery}, 18(1):140--181, 2009.
+
+\bibitem{netflix2022experimentation}
+{Netflix Tech Blog}.
+\newblock Improving recommendations through experimentation.
+\newblock
+  \url{https://netflixtechblog.com/improving-recommendations-through-experimentation-3b1a9c33b2ec},
+  2022.
+\newblock Accessed: 2025-04-21.
+
 \end{thebibliography}

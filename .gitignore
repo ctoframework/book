@@ -15,3 +15,7 @@
 cto-framework-book.pdf
 git-info.tex
 tags
+*.glo
+*.ist
+*.blg
+*.bbl

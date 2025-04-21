@@ -36,6 +36,9 @@
 \usepackage{float}
 
 \usepackage{imakeidx}
+
+\input{setup/glossaries}
+
 \makeindex[intoc]
 
 \input{setup/boxes}
@@ -44,6 +47,8 @@
 \input{setup/plots}
 \input{setup/headers}
 \input{git-info}
+
+\bibliographystyle{unsrt}
 
 \title{\booktitle}
 \author{\bookauthor}
@@ -78,7 +83,11 @@
 
 \listoffigures
 \listoftables
+\printglossaries
 % \lstlistoflistings
+\bibliography{references}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printglossary[type=\acronymtype, title={Acronyms}, toctitle={Acronyms}]
 
 \clearpage
 \printindex
