@@ -79,6 +79,13 @@ N.~Forsgren, J.~Humble, and G.~Kim.
 \newblock {\em Accelerate: The Science of Lean Software and DevOps}.
 \newblock IT Revolution Press, 2018.
 
+\bibitem{forsgren2021space}
+Nicole Forsgren, Margaret-Anne Storey, Abi Maddox, Thomas Zimmermann, Brian
+  Houck, and Jenna Butler.
+\newblock The space of developer productivity: There's more to it than you
+  think.
+\newblock {\em ACM Queue}, 19(1):20--48, 2021.
+
 \bibitem{thomke2020experimentation}
 Stefan Thomke.
 \newblock {\em Experimentation Works: The Surprising Power of Business
