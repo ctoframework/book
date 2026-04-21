@@ -1,33 +1,70 @@
 \pagestyle{empty}
 
 \begin{tikzpicture}[remember picture, overlay, shift={(current page.center)}]
-    % Background gradient (dark sky to neon blue horizon)
-    \shade[top color=black, bottom color=blue!60!black]
-    (current page.south west) rectangle (current page.north east);
+    % 1. Background (Deep Space)
+    \fill[black] (current page.south west) rectangle (current page.north east);
+    \shade[top color=black, bottom color=secondarycolor!40!black] 
+        (current page.south west) rectangle (current page.north east);
 
-    % Horizon Glow
-    \draw [magenta, opacity=0.8, line width=1pt] (-{0.5\paperwidth},0.15\paperheight) -- ({0.5\paperwidth},0.15\paperheight);
-    \fill [magenta!70!blue!30!black] (-{0.5\paperwidth},0.14\paperheight) rectangle ({0.5\paperwidth},0.15\paperheight);
+    % 2. Starfield
+    \foreach \i in {1,...,150} {
+        \fill[white, opacity={pow(rand,2)*0.8}] 
+            ({rand*0.5\paperwidth}, {0.15\paperheight + (0.5 + 0.5*rand)*0.35\paperheight}) 
+            circle ({0.2pt + 0.5pt*rnd});
+    }
 
-    % 3D Perspective Grid
-    \begin{scope}[canvas is xy plane at z=0, transform shape]
-        \foreach \x in {-64,-63,...,64} {
-                \draw[magenta, line width=0.8pt, opacity=0.7] (\x,-0.5\paperheight) -- (\x/5,0.15\paperheight);
-            }
-        \foreach \y in {0.10, 0.05,...,-0.55} {
-                \draw[magenta, line width=0.8pt, opacity=0.7] (-12\paperwidth,\y\paperheight) -- (12\paperwidth,\y\paperheight);
-            }
+    % 3. The Synthwave Sun
+    \begin{scope}
+        \clip (-0.5\paperwidth, 0.15\paperheight) rectangle (0.5\paperwidth, 0.8\paperheight);
+        
+        % Sun with vibrant top-to-bottom shading
+        \shade[top color=yellow, bottom color=primarycolor] (0, 0.15\paperheight) circle (7.5cm);
+        
+        % Sun horizontal slices (Classic synthwave "cut-out" look)
+        \foreach \i in {1,...,10} {
+            \pgfmathsetmacro{\ypos}{0.15\paperheight + 7.5cm - (\i*0.7cm)}
+            \pgfmathsetmacro{\height}{0.1cm + \i*0.08cm}
+            \fill[black] (-8cm, \ypos) rectangle (8cm, \ypos - \height);
+        }
     \end{scope}
 
-    % Book Title
-    \node[text=primarycolor, font=\bfseries\Huge] at (current page.north)
-    [yshift=-2cm] {CTO Framework};
+    % 4. Horizon Glow
+    \foreach \w in {35, 25, 15, 5} {
+        \draw[primarycolor, line width=\w pt, opacity={0.08}] 
+            (-0.5\paperwidth, 0.15\paperheight) -- (0.5\paperwidth, 0.15\paperheight);
+    }
+    \draw[primarycolor, line width=2pt] 
+        (-0.5\paperwidth, 0.15\paperheight) -- (0.5\paperwidth, 0.15\paperheight);
 
-    % Subtitle
-    \node[text=white, font=\LARGE] at (current page.north)
-    [yshift=-4cm] {A Strategic Guide for Tech Leaders};
+    % 5. 3D Perspective Grid
+    \begin{scope}
+        \clip (current page.south west) rectangle (0.5\paperwidth, 0.15\paperheight);
+        
+        \foreach \x in {-18,-17,...,18} {
+            \draw[primarycolor, opacity=0.4, line width=0.8pt] 
+                (\x*1.8cm, -0.5\paperheight) -- (\x*0.12cm, 0.15\paperheight);
+        }
+        
+        \foreach \i in {1,...,20} {
+            \pgfmathsetmacro{\ypos}{0.15\paperheight - 13 * exp(-0.16*\i)}
+            \draw[primarycolor, opacity={0.85 - \i*0.04}, line width=0.8pt] 
+                (-0.5\paperwidth, \ypos cm) -- (0.5\paperwidth, \ypos cm);
+        }
+    \end{scope}
 
-    % Author Name
-    \node[text=white, font=\Large] at (current page.south)
-    [yshift=2cm] {By \bookauthor};
+    % 6. Typography: Title (Inside the Sun)
+    % Positioned at 0.30\paperheight, which is the sweet spot of the 7.5cm sun (centered on horizon 0.15)
+    \node[text=black, font=\bfseries\fontsize{55}{65}\selectfont, scale=1.1, opacity=0.8] at (0, 0.32\paperheight) {CTO FRAMEWORK};
+    \node[text=white, font=\bfseries\fontsize{55}{65}\selectfont] (title) at (0, 0.32\paperheight) {CTO FRAMEWORK};
+    
+    % Subtitle (Below Horizon, floating over the grid)
+    \node[text=color5, font=\bfseries\LARGE\itshape] at (0, 0.08\paperheight) {A STRATEGIC GUIDE FOR TECH LEADERS};
+
+    % 7. Author and Metadata (Bottom)
+    \node[text=white, font=\huge\bfseries] at (0, -0.32\paperheight) {\bookauthor};
+    
+    \node[text=color5!90, font=\Large] at (0, -0.38\paperheight) {\href{https://ctoframework.com}{ctoframework.com}};
+    
+    \node[text=white!60, font=\small\bfseries] at (0, -0.44\paperheight) {REVISION \GitTag};
+
 \end{tikzpicture}
