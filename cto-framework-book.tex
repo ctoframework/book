@@ -44,6 +44,7 @@
 \makeindex[intoc]
 
 \input{setup/boxes}
+\input{setup/quotes}
 \input{setup/code}
 \input{setup/links}
 \input{setup/plots}
@@ -62,15 +63,16 @@
 
 \include{section0-intro/cover}
 \include{section0-intro/version}
+\include{section0-intro/dedication}
+\pagestyle{plain}
 \include{section0-intro/about-the-author}
 
-\newpage
+\cleardoublepage
 \tableofcontents
 
 \mainmatter
 \pagestyle{fancy}
 
-\include{section0-intro/dedication}
 \include{section0-intro/main}
 
 \include{section1-people/main}

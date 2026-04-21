@@ -1,0 +1,32 @@
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{chapterquotebox}{
+    enhanced,
+    colback=color2!5,
+    boxrule=0pt,
+    frame hidden,
+    borderline west={2pt}{0pt}{color1},
+    fontupper=\itshape\large,
+    left=25pt,
+    right=15pt,
+    top=15pt,
+    bottom=10pt,
+    sharp corners,
+    before skip=10pt,
+    after skip=20pt,
+    breakable,
+    overlay={
+        \node[anchor=north west, xshift=5pt, yshift=-2pt, opacity=0.2] at (frame.north west) {\fontsize{50}{50}\selectfont \color{color1} ``};
+    }
+}
+
+\newcommand{\chapterquote}[2]{
+    \begin{chapterquotebox}
+        #1
+        \vspace{5pt}
+        \begin{flushright}
+            \small\textsc{--- #2}
+        \end{flushright}
+    \end{chapterquotebox}
+}
