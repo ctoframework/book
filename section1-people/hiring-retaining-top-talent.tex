@@ -80,6 +80,23 @@ Companies like Salesforce and IBM have successfully built diverse engineering te
 
 A structured interview process ensures fairness, consistency, and a focus on hiring the best candidates based on merit. An effective selection process includes:
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=2cm, auto, >=stealth, thick]
+        \tikzset{block/.style={rectangle, draw, fill=secondarycolor!20, text width=3cm, text centered, rounded corners, minimum height=1.2cm}}
+        \tikzset{line/.style={draw, ->}}
+        
+        \node [block] (job) {Job Definition};
+        \node [block, right of=job, xshift=2.5cm] (interview) {Interviewing};
+        \node [block, right of=interview, xshift=2.5cm] (onboarding) {Onboarding};
+        
+        \path [line] (job) -- (interview);
+        \path [line] (interview) -- (onboarding);
+    \end{tikzpicture}
+    \caption{Hiring Process Flowchart}
+    \label{fig:hiring_flowchart}
+\end{figure}
+
 \subsubsection{Designing a Robust Interview Process}
 
 A well-designed interview process should assess both technical proficiency and cultural fit. It typically includes:
@@ -123,6 +140,31 @@ Unconscious bias can impact hiring decisions, leading to less diverse teams. Tec
 \subsection{Onboarding and Growth}
 
 A structured onboarding process plays a crucial role in setting new hires up for success. Proper onboarding ensures employees integrate into the team efficiently and feel engaged from the start.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[x=0.12cm, y=1cm, thick, >=stealth]
+        % Horizontal line
+        \draw[->] (0,0) -- (100,0) node[right] {Days};
+        
+        % Markers
+        \foreach \x in {30,60,90} {
+            \draw (\x, 0.2) -- (\x, -0.2) node[below] {\x};
+        }
+        
+        % Labels
+        \node[above=0.5cm, text width=2.5cm, text centered] at (15,0) {Integration \& Learning};
+        \node[above=0.5cm, text width=2.5cm, text centered] at (45,0) {Contribution \& Ownership};
+        \node[above=0.5cm, text width=2.5cm, text centered] at (75,0) {Optimization \& Impact};
+        
+        % Arrows/Brackets
+        \draw[<->] (0, -0.8) -- (30, -0.8) node[midway, below] {First 30};
+        \draw[<->] (30, -0.8) -- (60, -0.8) node[midway, below] {First 60};
+        \draw[<->] (60, -0.8) -- (90, -0.8) node[midway, below] {First 90};
+    \end{tikzpicture}
+    \caption{30/60/90 Day Onboarding Roadmap}
+    \label{fig:onboarding_roadmap}
+\end{figure}
 
 \subsubsection{Key Elements of a Successful Onboarding Program}
 

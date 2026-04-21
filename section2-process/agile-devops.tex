@@ -13,6 +13,25 @@ Three primary methodologies dominate the landscape:
     \item \textbf{DevOps}: Extends Agile principles by incorporating operations. It focuses on shortening the system development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. DevOps prioritises automation, continuous integration, and continuous deployment \cite{kim2016phoenix}.
 \end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=2cm, auto, thick, >=stealth]
+        \tikzset{box/.style={rectangle, draw, fill=secondarycolor!10, text width=2.5cm, text centered, minimum height=1cm, rounded corners}}
+        
+        \node [box] (waterfall) {Waterfall\\(Linear)};
+        \node [box, right of=waterfall, xshift=2cm] (agile) {Agile\\(Iterative)};
+        \node [box, right of=agile, xshift=2cm] (devops) {DevOps\\(Continuous)};
+        
+        \draw [->, line width=1pt] (waterfall) -- (agile);
+        \draw [->, line width=1pt] (agile) -- (devops);
+        
+        \node [below of=agile, node distance=1.5cm] {\textbf{Increasing Agility \& Collaboration}};
+        \draw [->, line width=2pt, gray!50] (-2, -1.2) -- (10, -1.2);
+    \end{tikzpicture}
+    \caption{Evolution of SDLC Methodologies}
+    \label{fig:sdlc_comparison}
+\end{figure}
+
 A CTO must evaluate various factors, including:
 \begin{itemize}
     \item Team expertise and composition.
@@ -66,6 +85,28 @@ A typical CI/CD pipeline consists of:
     \item \textbf{Build Automation}: Compiling and packaging applications using tools like Maven, Gradle, or Make.
     \item \textbf{Deployment Automation}: Seamless promotion from development to staging to production using tools like Jenkins, CircleCI, GitHub Actions, ArgoCD, and Kubernetes \cite{fowler2006ci}.
 \end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm, auto, thick, >=stealth, scale=0.8, every node/.style={transform shape}]
+        \tikzset{stage/.style={rectangle, draw, fill=secondarycolor!10, text width=2cm, text centered, minimum height=1cm, rounded corners}}
+        
+        \node [stage] (source) {Source Code};
+        \node [stage, right of=source, xshift=1.8cm] (build) {Build};
+        \node [stage, right of=build, xshift=1.8cm] (test) {Test};
+        \node [stage, right of=test, xshift=1.8cm] (deploy) {Deploy};
+        \node [stage, right of=deploy, xshift=1.8cm] (monitor) {Monitor};
+        
+        \draw [->] (source) -- (build);
+        \draw [->] (build) -- (test);
+        \draw [->] (test) -- (deploy);
+        \draw [->] (deploy) -- (monitor);
+        
+        \draw [->, bend right=30] (monitor.south) to node [below] {Feedback Loop} (source.south);
+    \end{tikzpicture}
+    \caption{CI/CD Pipeline Flow}
+    \label{fig:cicd_pipeline}
+\end{figure}
 
 Implementing CI/CD requires both cultural and technical transformation. It involves investing in automation infrastructure, redefining team responsibilities, and fostering a DevOps mindset.
 

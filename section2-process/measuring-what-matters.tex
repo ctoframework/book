@@ -18,6 +18,42 @@ The DevOps Research and Assessment (DORA) group has identified four key metrics 
     \item \textbf{Failed Service Restoration Time}: How long does it generally take to restore service when a change failure or incident occurs?
 \end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=1.5, thick, >=stealth]
+        % Define axes
+        \foreach \a in {0, 90, 180, 270} {
+            \draw[gray!50] (0,0) -- (\a:2.2);
+        }
+        
+        % Labels
+        \node[right] at (0:2.2) {Deployment Frequency};
+        \node[above] at (90:2.2) {Lead Time for Changes};
+        \node[left] at (180:2.2) {Change Failure Rate};
+        \node[below] at (270:2.2) {MTTR};
+        
+        % Circles/Web
+        \foreach \r in {0.5, 1, 1.5, 2} {
+            \draw[gray!30, dashed] (0,0) circle (\r);
+        }
+        
+        % Example Data Points (High Performance)
+        \coordinate (df) at (0:2);    % High frequency
+        \coordinate (lt) at (90:1.8);  % Low lead time (high score)
+        \coordinate (cfr) at (180:1.7); % Low failure rate (high score)
+        \coordinate (mttr) at (270:1.9); % low MTTR (high score)
+        
+        \fill[secondarycolor!40, opacity=0.6] (df) -- (lt) -- (cfr) -- (mttr) -- cycle;
+        \draw[secondarycolor, line width=1.5pt] (df) -- (lt) -- (cfr) -- (mttr) -- cycle;
+        
+        \foreach \p in {df, lt, cfr, mttr} {
+            \fill[secondarycolor] (\p) circle (2pt);
+        }
+    \end{tikzpicture}
+    \caption{DORA Metrics Radar Chart (Example Profile)}
+    \label{fig:dora_radar}
+\end{figure}
+
 \index{DORA Metrics}
 \index{Deployment Frequency}
 \index{Lead Time}

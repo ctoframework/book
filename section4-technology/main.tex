@@ -116,6 +116,20 @@ Monitoring provides visibility into system health. Key components include:
     \item \textbf{Tracing:} Distributed tracing for debugging microservices.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=2cm,
+        pillar/.style={circle, draw=secondarycolor, thick, fill=secondarycolor!10, minimum size=3cm, align=center}
+    ]
+        \node[pillar] (metrics) {Metrics};
+        \node[pillar, right=0.5cm of metrics] (logs) {Logs};
+        \node[pillar, right=0.5cm of logs] (traces) {Traces};
+    \end{tikzpicture}
+    \caption{The Three Pillars of Observability}
+    \label{fig:observability-pillars}
+\end{figure}
+
 \input{section4-technology/incident-management-and-reliability}
 
 

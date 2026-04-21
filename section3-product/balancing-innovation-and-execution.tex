@@ -22,6 +22,35 @@ Technical debt is an inevitable part of software development. You must manage it
     \caption{Types of Technical Debt}
 \end{table}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[thick, scale=0.9]
+        % Axes
+        \draw[<->, line width=1.5pt] (-4,0) -- (4,0) node[right] {Intentionality};
+        \draw[<->, line width=1.5pt] (0,-4) -- (0,4) node[above] {Prudence};
+        
+        % Labels for axes
+        \node[anchor=south east] at (-0.2, 4) {Prudent};
+        \node[anchor=north east] at (-0.2, -4) {Reckless};
+        \node[anchor=north east] at (-4, -0.2) {Deliberate};
+        \node[anchor=north west] at (4, -0.2) {Inadvertent};
+        
+        % Quadrant Labels
+        \node[text width=3cm, align=center] at (-2,2) {\textbf{Prudent \& Deliberate}\\ (Strategic shortcuts)};
+        \node[text width=3cm, align=center] at (2,2) {\textbf{Prudent \& Inadvertent}\\ (Learning as we go)};
+        \node[text width=3cm, align=center] at (-2,-2) {\textbf{Reckless \& Deliberate}\\ (Cutting corners)};
+        \node[text width=3cm, align=center] at (2,-2) {\textbf{Reckless \& Inadvertent}\\ (Unaware of best practices)};
+        
+        % Decorative frames for quadrants
+        \draw[secondarycolor, opacity=0.3, fill=secondarycolor!10] (-3.8, 0.2) rectangle (-0.2, 3.8);
+        \draw[color1, opacity=0.3, fill=color1!10] (0.2, 0.2) rectangle (3.8, 3.8);
+        \draw[color4, opacity=0.3, fill=color4!10] (-3.8, -3.8) rectangle (-0.2, -0.2);
+        \draw[color3, opacity=0.3, fill=color3!10] (0.2, -3.8) rectangle (3.8, -0.2);
+    \end{tikzpicture}
+    \caption{Technical Debt Quadrant}
+    \label{fig:tech_debt_quadrant}
+\end{figure}
+
 Key strategies for managing technical debt include:
 
 \begin{itemize}
@@ -40,3 +69,26 @@ Decide when to build custom solutions and when to leverage third-party tools. Co
     \item \textbf{Customization Needs:} Does the existing solution meet your business requirements?
     \item \textbf{Vendor Lock-in:} What are the risks of depending on a third-party provider?
 \end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm, auto, thick, >=stealth, scale=0.8, every node/.style={transform shape}]
+        \tikzset{decision/.style={diamond, draw, fill=secondarycolor!10, text width=2cm, text centered, inner sep=0pt}}
+        \tikzset{block/.style={rectangle, draw, fill=color3!20, text width=2.5cm, text centered, rounded corners, minimum height=1cm}}
+        
+        \node [decision] (core) {Strategic Core?};
+        
+        \node [decision, below left=1.5cm and 2cm of core] (diff) {High Diff?};
+        \node [block, below right=1.5cm and 2cm of core] (buy1) {BUY};
+        
+        \node [block, below left=1.5cm and 1cm of diff] (build) {BUILD};
+        \node [block, below right=1.5cm and 1cm of diff] (buy2) {BUY};
+        
+        \path [draw, ->] (core) -- node [left] {Yes} (diff);
+        \path [draw, ->] (core) -- node [right] {No} (buy1);
+        \path [draw, ->] (diff) -- node [left] {Yes} (build);
+        \path [draw, ->] (diff) -- node [right] {No} (buy2);
+    \end{tikzpicture}
+    \caption{Build vs. Buy Decision Tree}
+    \label{fig:build_vs_buy}
+\end{figure}

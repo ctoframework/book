@@ -111,4 +111,23 @@ Recognizing and rewarding high performance is essential for motivation and reten
     \label{tab:high_performance_elements}                                                                                                                                                         \\
 \end{longtable}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=3cm, auto, thick, >=stealth]
+        \tikzset{node_style/.style={circle, draw=secondarycolor, fill=secondarycolor!10, text width=2.2cm, text centered, minimum height=2.2cm}}
+        
+        \node [node_style] (collaboration) at (90:3cm) {Collaboration};
+        \node [node_style] (accountability) at (0:3cm) {Accountability};
+        \node [node_style] (growth) at (270:3cm) {Growth Mindset};
+        \node [node_style] (safety) at (180:3cm) {Psychological Safety};
+        
+        \draw [->, bend left=30, secondarycolor, line width=1.5pt] (collaboration) to (accountability);
+        \draw [->, bend left=30, secondarycolor, line width=1.5pt] (accountability) to (growth);
+        \draw [->, bend left=30, secondarycolor, line width=1.5pt] (growth) to (safety);
+        \draw [->, bend left=30, secondarycolor, line width=1.5pt] (safety) to (collaboration);
+    \end{tikzpicture}
+    \caption{The High-Performance Culture Cycle}
+    \label{fig:culture_cycle}
+\end{figure}
+
 By focusing on these key elements, CTOs can cultivate a high-performance culture that empowers their teams to achieve remarkable results.

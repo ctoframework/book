@@ -14,6 +14,28 @@ An effective incident response plan (IRP) provides predefined escalation paths, 
     \item \textbf{Review and Documentation:} Capturing key incident details to inform future prevention strategies.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=0.5cm,
+        lifecycle-step/.style={rectangle, draw=secondarycolor, thick, fill=secondarycolor!10, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center, font=\small},
+        arrow/.style={-Stealth, thick, secondarycolor}
+    ]
+        \node[lifecycle-step] (det) {Detection};
+        \node[lifecycle-step, right=of det] (cla) {Classification};
+        \node[lifecycle-step, right=of cla] (esc) {Escalation};
+        \node[lifecycle-step, right=of esc] (mit) {Mitigation};
+        \node[lifecycle-step, right=of mit] (pos) {Postmortem};
+        
+        \draw[arrow] (det) -- (cla);
+        \draw[arrow] (cla) -- (esc);
+        \draw[arrow] (esc) -- (mit);
+        \draw[arrow] (mit) -- (pos);
+    \end{tikzpicture}
+    \caption{Incident Management Lifecycle}
+    \label{fig:incident-lifecycle}
+\end{figure}
+
 A well-structured IRP reduces confusion during crises and accelerates recovery, ensuring minimal impact on users and business operations.
 
 \subsubsection{Postmortems and Continuous Learning}
@@ -54,6 +76,31 @@ Ensuring system reliability requires designing for failure through redundancy an
     \caption{Redundancy and High Availability Strategies}
     \label{tab:redundancy-strategies}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.5cm,
+        component/.style={rectangle, draw=secondarycolor, thick, fill=secondarycolor!10, rounded corners, minimum width=3.5cm, minimum height=1cm, align=center},
+        arrow/.style={-Stealth, thick, secondarycolor}
+    ]
+        \node[component] (lb) {Load Balancer};
+        
+        \node[component, below left=1cm and 0.5cm of lb] (app1) {App Instance 1};
+        \node[component, below right=1cm and 0.5cm of lb] (app2) {App Instance 2};
+        
+        \node[component, below=3cm of lb] (db1) {Primary Database};
+        \node[component, right=1cm of db1] (db2) {Replica};
+
+        \draw[arrow] (lb) -- (app1);
+        \draw[arrow] (lb) -- (app2);
+        \draw[arrow] (app1) -- (db1);
+        \draw[arrow] (app2) -- (db1);
+        \draw[arrow, dashed] (db1) -- (db2) node[midway, above] {\small Sync};
+    \end{tikzpicture}
+    \caption{Redundancy and High Availability Architecture}
+    \label{fig:redundancy-architecture}
+\end{figure}
 
 These redundancy techniques enhance fault tolerance and ensure seamless user experiences even in the face of unexpected failures.
 

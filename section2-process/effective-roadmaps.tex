@@ -31,6 +31,30 @@ A roadmap should be structured to incorporate different time horizons, ensuring 
     \caption{Example Technology Roadmap with Focus Areas}
 \end{table}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[thick, >=stealth]
+        % Funnel Shape
+        \draw[fill=secondarycolor!5] (0,0) -- (8,0) -- (6,-5) -- (2,-5) -- cycle;
+        
+        % Horizontal Lines for sections
+        \draw (1.2,-1.25) -- (6.8,-1.25);
+        \draw (2.4,-2.5) -- (5.6,-2.5);
+        \draw (3.6,-3.75) -- (4.4,-3.75);
+        
+        % Labels
+        \node at (4, -0.625) {\textbf{24+ Months:} Strategic Vision \& Emerging Tech};
+        \node at (4, -1.875) {\textbf{12-24 Months:} Scale \& Expansion};
+        \node at (4, -3.125) {\textbf{6-12 Months:} Product Maturity};
+        \node at (4, -4.375) {\textbf{0-6 Months:} Execution \& Delivery};
+        
+        % Arrow showing narrowing focus
+        \draw[->, line width=1.5pt] (9, 0) -- (9, -5) node[midway, sloped, above] {Increasing Certainty \& Detail};
+    \end{tikzpicture}
+    \caption{Roadmap Time-Horizons Funnel}
+    \label{fig:roadmap_funnel}
+\end{figure}
+
 \subsection{Stakeholder Management}
 
 Effective roadmaps are not created in isolation; they require active engagement and collaboration with key stakeholders across the organisation. Clear communication ensures alignment and buy-in from different groups.

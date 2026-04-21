@@ -13,6 +13,27 @@ A successful product and technical strategy requires measuring the right things.
     \item \textbf{Development Velocity:} Sprint completion rates and cycle times.
 \end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=2.5cm, auto, thick, >=stealth]
+        \tikzset{loop-step/.style={rectangle, draw, fill=secondarycolor!10, text width=2cm, text centered, rounded corners, minimum height=1cm}}
+        
+        \node [loop-step] (data) {Data};
+        \node [loop-step, right of=data] (insights) {Insights};
+        \node [loop-step, below of=insights] (decision) {Decision};
+        \node [loop-step, below of=data] (action) {Action};
+        
+        \draw [->] (data) -- (insights);
+        \draw [->] (insights) -- (decision);
+        \draw [->] (decision) -- (action);
+        \draw [->] (action) -- (data);
+        
+        \node at (1.25, -1.25) {\large \textbf{Loop}};
+    \end{tikzpicture}
+    \caption{The Data-Driven Feedback Loop}
+    \label{fig:data_loop}
+\end{figure}
+
 \input{section3-product/experimentation-and-validation}
 
 \subsection{Scaling Successfully}
