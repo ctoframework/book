@@ -1,4 +1,28 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{GoogleHiring}
+{Google}.
+\newblock Google hiring and recruitment strategies.
+\newblock \url{https://careers.google.com}, 2021.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{MicrosoftBranding}
+{Microsoft}.
+\newblock Employer branding for tech companies.
+\newblock \url{https://microsoft.com/careers}, 2022.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{SalesforceDiversity}
+{Salesforce}.
+\newblock Diversity and inclusion in tech.
+\newblock \url{https://salesforce.com/diversity}, 2023.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{AmazonOnboarding}
+{Amazon}.
+\newblock Effective onboarding programs: A case study.
+\newblock \url{https://amazon.jobs}, 2023.
+\newblock Accessed: 2025-04-21.
 
 \bibitem{brookhart2017}
 Susan~M. Brookhart.
@@ -14,6 +38,46 @@ Carol~S. Dweck.
 Amy~C. Edmondson.
 \newblock Psychological safety and learning behavior in work teams.
 \newblock {\em Administrative Science Quarterly}, 44(2):350--383, 1999.
+
+\bibitem{royce1970waterfall}
+W.~W. Royce.
+\newblock Managing the development of large software systems.
+\newblock In {\em Proceedings of IEEE WESCON}, 1970.
+
+\bibitem{beck2001agile}
+K.~Beck et~al.
+\newblock Manifesto for agile software development.
+\newblock \url{https://agilemanifesto.org}, 2001.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{kim2016phoenix}
+G.~Kim, K.~Behr, and G.~Spafford.
+\newblock {\em The Phoenix Project: A Novel About IT, DevOps, and Helping Your
+  Business Win}.
+\newblock IT Revolution, 2016.
+
+\bibitem{chacon2014progit}
+S.~Chacon and B.~Straub.
+\newblock {\em Pro Git}.
+\newblock Apress, 2nd edition, 2014.
+
+\bibitem{fowler2006ci}
+M.~Fowler.
+\newblock Continuous integration.
+\newblock \url{https://martinfowler.com/articles/continuousIntegration.html},
+  2006.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{rahman2020feature}
+A.~Rahman.
+\newblock Feature flags: Manage releases without deploying.
+\newblock \url{https://martinfowler.com/articles/feature-toggles.html}, 2020.
+\newblock Accessed: 2025-04-21.
+
+\bibitem{forsgren2018accelerate}
+N.~Forsgren, J.~Humble, and G.~Kim.
+\newblock {\em Accelerate: The Science of Lean Software and DevOps}.
+\newblock IT Revolution Press, 2018.
 
 \bibitem{thomke2020experimentation}
 Stefan Thomke.
@@ -33,5 +97,10 @@ Ron Kohavi, Roger Longbotham, Dan Sommerfield, and Randy~M Henne.
   \url{https://netflixtechblog.com/improving-recommendations-through-experimentation-3b1a9c33b2ec},
   2022.
 \newblock Accessed: 2025-04-21.
+
+\bibitem{allspaw2012postmortem}
+J.~Allspaw.
+\newblock Postmortem culture: Learning from failure.
+\newblock In {\em Velocity Conference}, 2012.
 
 \end{thebibliography}
