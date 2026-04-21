@@ -12,7 +12,7 @@ jobs:
       - name: Generate Git tex info
         run: make prepare
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           args: -jobname=cto-framework-book -output-format=pdf
           latexmk_use_lualatex: true
