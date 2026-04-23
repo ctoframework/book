@@ -1,22 +1,50 @@
+# Core PDF output
+cto-framework-book.pdf
+
+# Generated Git info
+git-info.tex
+
+# LaTeX core auxiliary files
 *.aux
-*.brf
+*.log
+*.toc
+*.out
 *.fdb_latexmk
 *.fls
-*.gz
+*.synctex.gz
+*.pdfsync
+
+# Bibliography files
+*.bbl
+*.blg
+
+# Indexing files
 *.idx
 *.ilg
 *.ind
-*.lof
-*.log
-*.lol
-*.lot
-*.out
-*.toc
-cto-framework-book.pdf
-git-info.tex
-tags
-*.glo
 *.ist
-*.blg
-*.bbl
-cto-framework-book.gl*
+
+# Glossary and Acronym files
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.glsdefs
+*.gl*
+*.ist
+
+# Lists of figures, tables, and listings
+*.lof
+*.lot
+*.lol
+
+# Modern LaTeX packages auxiliary files
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.brf
+

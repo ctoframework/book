@@ -1,21 +1,30 @@
 NAME=cto-framework-book
+ENGINE=lualatex
+FLAGS=-interaction=nonstopmode -halt-on-error
 
-pdf: clean prepare
-	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
+.PHONY: all pdf open clean prepare
+
+all: pdf
+
+pdf: prepare
+	$(ENGINE) $(FLAGS) -jobname=$(NAME) $(NAME).tex
 	bibtex $(NAME).aux
 	makeindex $(NAME).idx
 	makeglossaries $(NAME)
-	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
-	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
+	$(ENGINE) $(FLAGS) -jobname=$(NAME) $(NAME).tex
+	$(ENGINE) $(FLAGS) -jobname=$(NAME) $(NAME).tex
 
 open:
 	xdg-open $(NAME).pdf
 
 clean:
-	rm -f *.pdf git-info.tex
+	@echo "Cleaning auxiliary files..."
+	@rm -f *.aux *.log *.toc *.out *.idx *.glo *.ist *.acn *.acr *.alg *.bbl *.blg *.ind *.ilg *.gls* *.glo* *.glg*
+	@rm -f git-info.tex
+	@rm -f $(NAME).pdf
 
 prepare: git-info.tex
 
-git-info.tex:
-	sed "s/__GIT_TAG__/$(shell git describe --tags)/" git-info.TEMPLATE.tex > git-info.tex
-	cat git-info.tex
+git-info.tex: git-info.TEMPLATE.tex
+	@echo "Generating git-info.tex..."
+	@sed "s/__GIT_TAG__/$(shell git describe --tags --always)/" git-info.TEMPLATE.tex > git-info.tex
