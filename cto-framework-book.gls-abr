@@ -1,0 +1,40 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{C}\relax \glsresetentrylist %
+\glossentry{CAPEX}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{18}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{33}}}%
+\glossentry{CTO}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{18\delimR 20}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{23}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{25}}}\glsgroupskip
+\glsgroupheading{F}\relax \glsresetentrylist %
+\glossentry{FinOps}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{20}}}\glsgroupskip
+\glsgroupheading{O}\relax \glsresetentrylist %
+\glossentry{OPEX}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{18}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{33}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glossentry{P&L}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{19\delimN 20}}}\glsgroupskip
+\glsgroupheading{R}\relax \glsresetentrylist %
+\glossentry{ROI}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{19}}}\glsgroupskip
+\glsgroupheading{S}\relax \glsresetentrylist %
+\glossentry{SaaS}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{18}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{24}}}\glsgroupskip
+\glsgroupheading{T}\relax \glsresetentrylist %
+\glossentry{TCO}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{viii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{19}}}\glsgroupskip
+\glsgroupheading{U}\relax \glsresetentrylist %
+\glossentry{UX}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{24}}}%
+\end{theglossary}\glossarypostamble

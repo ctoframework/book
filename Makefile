@@ -4,6 +4,7 @@ pdf: clean prepare
 	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
 	bibtex $(NAME).aux
 	makeindex $(NAME).idx
+	makeglossaries $(NAME)
 	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
 	lualatex -interaction nonstopmode -halt-on-error -jobname=$(NAME) $(NAME).tex
 

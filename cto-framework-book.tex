@@ -3,12 +3,12 @@
 \documentclass[a4paper]{book}
 
 \usepackage[english]{babel} % Language support
-\usepackage[T1]{fontenc}    % Proper font encoding
-\usepackage{lmodern}        % Better font rendering
-% \usepackage{mlmodern}
+\usepackage{csquotes}       % Modern handling of quotations
 
 \usepackage{fontspec}
 \setmainfont{IBM Plex Sans}
+
+\usepackage{microtype}      % Professional-grade typography (protrusion/expansion)
 
 \usepackage{graphicx} % Required for inserting images
 \graphicspath{{images/}{../images/}}
@@ -90,11 +90,9 @@
 
 \listoffigures
 \listoftables
-\printglossaries
-% \lstlistoflistings
+\printglossary[type=abbreviations, title={Acronyms}, toctitle={Acronyms}]
 \bibliography{references}
 \addcontentsline{toc}{chapter}{Bibliography}
-\printglossary[type=\acronymtype, title={Acronyms}, toctitle={Acronyms}]
 
 \clearpage
 \printindex
