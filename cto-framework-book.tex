@@ -48,10 +48,13 @@
 \input{setup/code}
 \input{setup/links}
 \input{setup/plots}
+
+% Modern Bibliography Management
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{references.bib}
+
 \input{setup/headers}
 \input{git-info}
-
-\bibliographystyle{unsrt}
 
 \title{\booktitle}
 \author{\bookauthor}
@@ -91,8 +94,7 @@
 \listoffigures
 \listoftables
 \printglossary[type=abbreviations, title={Acronyms}, toctitle={Acronyms}]
-\bibliography{references}
-\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography[heading=bibintoc, title={Bibliography}]
 
 \clearpage
 \printindex

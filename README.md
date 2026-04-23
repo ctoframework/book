@@ -4,7 +4,8 @@ A comprehensive framework for Chief Technology Officers and engineering leaders 
 
 ## Prerequisites
 
-- **TeX Live:** A full installation is recommended (specifically `lualatex`, `bibtex`, `makeindex`, and `makeglossaries`).
+- **TeX Live:** A full installation is recommended (specifically `lualatex`, `biber`, `makeindex`, and `makeglossaries`).
+- **Biber:** The modern bibliography processor for BibLaTeX.
 - **IBM Plex Sans:** The book uses the IBM Plex Sans font family.
 - **Git:** Required for generating version information.
 

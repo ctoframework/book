@@ -5,6 +5,7 @@ This document provides context and rules for AI agents (LLMs, CLI agents) assist
 ## Technical Stack
 
 - **Engine:** `lualatex` (required for `fontspec` and modern font handling).
+- **Bibliography:** `biblatex` with the `biber` backend.
 - **Fonts:** IBM Plex Sans.
 - **Build System:** `GNU Make`.
 - **Glossaries:** `glossaries-extra` with the `abbreviations` option.

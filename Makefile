@@ -8,7 +8,7 @@ all: pdf
 
 pdf: prepare
 	$(ENGINE) $(FLAGS) -jobname=$(NAME) $(NAME).tex
-	bibtex $(NAME).aux
+	biber $(NAME)
 	makeindex $(NAME).idx
 	makeglossaries $(NAME)
 	$(ENGINE) $(FLAGS) -jobname=$(NAME) $(NAME).tex
@@ -19,7 +19,7 @@ open:
 
 clean:
 	@echo "Cleaning auxiliary files..."
-	@rm -f *.aux *.log *.toc *.out *.idx *.glo *.ist *.acn *.acr *.alg *.bbl *.blg *.ind *.ilg *.gls* *.glo* *.glg*
+	@rm -f *.aux *.log *.toc *.out *.idx *.glo *.ist *.acn *.acr *.alg *.bbl *.blg *.ind *.ilg *.gls* *.glo* *.glg* *.run.xml *.bcf
 	@rm -f git-info.tex
 	@rm -f $(NAME).pdf
 
